@@ -441,3 +441,10 @@ def wrap_error_reporter(parser, rule, *args,**kw):
     except NoMoreTokens:
         print('Could not complete parsing; stopped around here:', file=sys.stderr)
         print(parser._scanner, file=sys.stderr)
+
+def _print(*args, **kwargs):
+    """print() function wrapper.
+
+    It is used for py2/py3 compatibility without the need for `from __future__ import`
+    """
+    print(*args, **kwargs)
